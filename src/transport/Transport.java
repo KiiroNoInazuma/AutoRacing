@@ -1,6 +1,6 @@
 package transport;
 
-abstract class Transport {
+abstract class Transport implements Competing {
     private final String model;
     private final String brand;
     private double engVolume;
@@ -32,10 +32,29 @@ abstract class Transport {
         this.engVolume = engineVolume;
     }
 
-    public abstract void startMoving();
+    void startMoving() {
+        System.out.println(getModel() + " " + getBrand() + " " + getEngVolume() + " - START");
+    }
 
-    abstract void finishMoving();
 
+    void finishMoving() {
+        System.out.println(getModel() + " " + getBrand() + " " + getEngVolume() + " - FINISH");
+    }
+
+    @Override
+    public void pitStop(boolean pitStop) {
+        System.out.println(getModel() + " " + getBrand() + " " + getEngVolume() + " - заправка");
+    }
+
+    @Override
+    public double bestLapTime(double time) {
+        return time;
+    }
+
+    @Override
+    public double maxSpeed(double maxS) {
+        return maxS;
+    }
 }
 
 

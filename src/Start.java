@@ -1,7 +1,5 @@
-import transport.Bus;
-import transport.Car;
-import transport.Competing;
-import transport.Truck;
+import transport.*;
+
 
 public class Start {
     public static void main(String[] args) {
@@ -9,6 +7,9 @@ public class Start {
         Truck truck = new Truck("kaMAZ", "43509M", 12.9);
         Bus bus = new Bus("Higher", "KLQ 6119TQ", 9);
 
+
+        Driver<Car, Truck, Bus> driver = new Driver<>("Тестов Тест Тестович", 'B', 25);
+        driver.right(car);
 
 
 

@@ -9,7 +9,6 @@ public class Start {
 
 
         Driver<?> driver = new Driver<>("Тестов Тест Тестович", 'B', 25);
-        //если нужно программно ограничить, то указываем так: Driver<Car> driver = new Driver<>("Тестов Тест Тестович", 'B', 25);
         driver.right(car);
 
 

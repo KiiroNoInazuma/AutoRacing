@@ -1,6 +1,6 @@
 package transport;
 
-public class Driver<B, C, D extends Transport & Competing> {
+public class Driver<T extends Transport & Competing> {
     //если нужно программно ограничить, то указываем так: public class Driver<T extends Transport & Competing> {
     private String fio;
     private char driverCard;

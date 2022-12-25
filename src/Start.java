@@ -8,7 +8,7 @@ public class Start {
         Bus bus = new Bus("Higher", "KLQ 6119TQ", 9);
 
 
-        Driver<Car, Truck, Bus> driver = new Driver<>("Тестов Тест Тестович", 'B', 25);
+        Driver<?> driver = new Driver<>("Тестов Тест Тестович", 'B', 25);
         //если нужно программно ограничить, то указываем так: Driver<Car> driver = new Driver<>("Тестов Тест Тестович", 'B', 25);
         driver.right(car);
 

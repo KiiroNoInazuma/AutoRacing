@@ -7,11 +7,11 @@ public class Car extends Transport {
 
     @Override
     public String startDriving() {
-        return getModel() + " " + getBrand() + "движется";
+        return getModel() + " " + getBrand() + " начал движение";
     }
 
     @Override
     public String stopDriving() {
-        return getModel() + " " + getBrand() + "стоит на месте";
+        return getModel() + " " + getBrand() + " стоит на месте";
     }
 }

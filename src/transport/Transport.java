@@ -39,8 +39,8 @@ public abstract class Transport implements Competing {
     public abstract String stopDriving();
 
     @Override
-    public void pitStop() {
-        System.out.println(model + brand + " заезжает на техобслуживание");
+    public String pitStop() {
+        return model + brand + " заезжает на техобслуживание";
     }
 
     @Override

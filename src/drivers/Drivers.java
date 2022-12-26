@@ -4,7 +4,7 @@ import transport.Transport;
 
 import java.time.LocalDate;
 
-abstract class Drivers implements Competing {
+abstract class Drivers<T extends Transport & Competing> {
 
     private final String fio;
     private boolean driverCard;
@@ -54,18 +54,19 @@ abstract class Drivers implements Competing {
         this.yearDriverLicense = yearDriverLicense;
     }
 
-    @Override
-    public void pitStop() {
-        System.out.println(fio + " заехал на техобслуживание (заправку).");
+
+    public void pitStop(T transport) {
+        System.out.println(fio + " управляя " + transport.pitStop());
     }
 
-    public String startDriving(Transport transport) {
+    public String startDriving(T transport) {
         return fio + " - водитель " + transport.startDriving();
     }
 
-    public String stopDriving(Transport transport) {
+    public String stopDriving(T transport) {
         return fio + " - водитель " + transport.startDriving();
     }
+
 
 }
 

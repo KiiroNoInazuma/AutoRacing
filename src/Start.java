@@ -11,6 +11,8 @@ public class Start {
         Bus mercedes = new Bus("Mercedes", "Travego", 11.9);
         Bus yutong = new Bus("Yutong", "U12", 14.5);
 
+        corvette.lapTime(jaguar.maxSpeed(221));
+
     }
 }
 

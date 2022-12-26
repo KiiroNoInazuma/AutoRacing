@@ -1,7 +1,7 @@
 package drivers;
 
 public interface Competing {
-    String pitStop();
-    double lapTime();
-    double maxSpeed();
+    void pitStop();
+    void lapTime(double maxSpeed);
+    double maxSpeed(double maxSpeed);
 }

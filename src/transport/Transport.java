@@ -1,11 +1,7 @@
 package transport;
 
 import drivers.Competing;
-import lombok.Getter;
 
-import java.text.Format;
-
-@Getter
 abstract class Transport implements Competing {
     private final String model;
     private final String brand;
@@ -24,6 +20,10 @@ abstract class Transport implements Competing {
         }
         this.brand = brand;
         setEngineCapacity(engineCapacity);
+    }
+
+    double getEngineCapacity() {
+        return engineCapacity;
     }
 
     void setEngineCapacity(double engineCapacity) {
@@ -45,8 +45,8 @@ abstract class Transport implements Competing {
 
     @Override
     public void lapTime(double maxSpeed) {
-        System.out.println("Лучшее время " + model + " " + brand + ": " + String.format("%.2f",10/maxSpeed*3600)+"c.");
-        System.out.println("Максимальная скорость " + model + " " + brand + ": " + maxSpeed+" km/h");
+        System.out.println("Лучшее время " + model + " " + brand + ": " + String.format("%.2f", 10 / maxSpeed * 3600) + "c.");
+        System.out.println("Максимальная скорость " + model + " " + brand + ": " + maxSpeed + " km/h");
     }
 
     @Override

@@ -1,5 +1,6 @@
 package drivers;
 
+import transport.Transport;
 
 import java.time.LocalDate;
 
@@ -55,7 +56,17 @@ abstract class Drivers implements Competing {
 
     @Override
     public void pitStop() {
-        System.out.println(fio + " заехал на техобслуживание.");
+        System.out.println(fio + " заехал на техобслуживание (заправку).");
+    }
+
+    public String startDriving(Transport transport) {
+        return fio + " - водитель " + transport.startDriving();
+    }
+
+    public String stopDriving(Transport transport) {
+        return fio + " - водитель " + transport.startDriving();
     }
 
 }
+
+

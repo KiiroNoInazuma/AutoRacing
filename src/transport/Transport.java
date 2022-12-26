@@ -2,7 +2,7 @@ package transport;
 
 import drivers.Competing;
 
-abstract class Transport implements Competing {
+public abstract class Transport implements Competing {
     private final String model;
     private final String brand;
     private double engineCapacity;
@@ -34,9 +34,9 @@ abstract class Transport implements Competing {
         this.engineCapacity = engineCapacity;
     }
 
-    abstract String startDriving();
+    public abstract String startDriving();
 
-    abstract String stopDriving();
+    public abstract String stopDriving();
 
     @Override
     public void pitStop() {

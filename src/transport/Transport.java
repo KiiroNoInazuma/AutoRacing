@@ -32,6 +32,7 @@ abstract class Transport {
     }
 
     abstract String startDriving();
+
     abstract String stopDriving();
 }
 

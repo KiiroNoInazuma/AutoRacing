@@ -53,6 +53,14 @@ abstract class Transport implements Competing {
     public double maxSpeed(double maxSpeed) {
         return maxSpeed;
     }
+
+    public String getModel() {
+        return model;
+    }
+
+    public String getBrand() {
+        return brand;
+    }
 }
 
 

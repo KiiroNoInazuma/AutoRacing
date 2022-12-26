@@ -14,7 +14,6 @@ abstract class Drivers implements Competing {
             fio = "Неизвестный водитель";
         }
         this.fio = fio;
-
         setDriverCard(driverCard);
         setYearDriverLicense(yearDriverLicense);
     }
@@ -53,4 +52,10 @@ abstract class Drivers implements Competing {
         }
         this.yearDriverLicense = yearDriverLicense;
     }
+
+    @Override
+    public void pitStop() {
+        System.out.println(fio + " заехал на техобслуживание.");
+    }
+
 }

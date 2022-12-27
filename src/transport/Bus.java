@@ -52,4 +52,9 @@ public class Bus extends Transport {
         lapTime(0);
         return getModel() + " " + getBrand() + " стоит на месте";
     }
+
+    @Override
+    void printType() {
+        System.out.println(getTypeBus());
+    }
 }

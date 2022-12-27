@@ -67,6 +67,8 @@ public abstract class Transport implements Competing {
     public String getBrand() {
         return brand;
     }
+
+    abstract void printType();
 }
 
 

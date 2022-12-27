@@ -31,11 +31,11 @@ public class Car extends Transport {
     }
 
 
-    public BodyTypeCar getTypeCar() {
+    private BodyTypeCar getTypeCar() {
         return type;
     }
 
-    public void setTypeCar(String type) { //доделать
+    public void setTypeCar(String type) {
         this.type = BodyTypeCar.valueOf(type);
     }
 
@@ -48,5 +48,10 @@ public class Car extends Transport {
     public String stopDriving() {
         lapTime(0);
         return getModel() + " " + getBrand() + " стоит на месте.";
+    }
+
+    @Override
+    public void printType() {
+        System.out.println(getTypeCar());
     }
 }

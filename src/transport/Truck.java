@@ -37,7 +37,7 @@ public class Truck extends Transport {
         return type;
     }
 
-    public void setTypeTruck(String type) {//доделать
+    public void setTypeTruck(String type) {
         this.type = BodyTypeTruck.valueOf(type);
     }
 
@@ -50,5 +50,10 @@ public class Truck extends Transport {
     public String stopDriving() {
         lapTime(0);
         return getModel() + " " + getBrand() + " стоит на месте";
+    }
+
+    @Override
+    void printType() {
+        System.out.println(getTypeTruck());
     }
 }

@@ -30,8 +30,9 @@ public class Start {
         driveThird.messageInfoCheck(oka);
 
         driveFirst.setDriverCard("аннулировать");
-        //jaguar.setTypeCar("Седан");//- исправить
-        System.out.println(jaguar.getTypeCar());
+        jaguar.printType();
+
+
 
     }
 }

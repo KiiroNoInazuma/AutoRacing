@@ -68,6 +68,3 @@ public abstract class Transport implements Competing {
         return brand;
     }
 }
-
-
-

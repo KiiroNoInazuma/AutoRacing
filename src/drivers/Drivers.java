@@ -47,9 +47,8 @@ abstract class Drivers<T extends Transport & Competing> {
     }
 
     public void setYearDriverLicense(int yearDriverLicense) {
-        if (getYearDriverLicense() < 5) {
-            yearDriverLicense = 0;
-            System.out.println("Водитель должен быть старше 16 лет");
+        if (yearDriverLicense < 1972) {
+            yearDriverLicense = 2022;
         }
         this.yearDriverLicense = yearDriverLicense;
     }
@@ -64,16 +63,14 @@ abstract class Drivers<T extends Transport & Competing> {
     }
 
     public String stopDriving(T transport) {
-        return getFio() + " - водитель " + transport.startDriving();
+        return getFio() + " - водитель " + transport.stopDriving();
     }
 
     public void messageInfoCheck(T transport) {
-        if (getYearDriverLicense() >= 5 && driverCard) {
-            System.out.println("Водитель " + fio + " управляет автомобилем "
-                    + transport.getModel() + " " + transport.getBrand() + " и будет участвовать в заезде!");
+        if (getYearDriverLicense() >= 5 && driverCard && yearDriverLicense > 1972 && transport.getEngineCapacity() > 0.5 || isDriverCard()) {
+            System.out.println("Водитель " + fio + " управляет автомобилем " + transport.getModel() + " " + transport.getBrand() + " и будет участвовать в заезде!");
         } else {
-            System.out.println("Водитель " + fio + " не может управлять автомобилем "
-                    + transport.getModel() + " " + transport.getBrand());
+            System.out.println("Водитель " + fio + " не может управлять автомобилем " + transport.getModel() + " " + transport.getBrand() + "!");
         }
     }
 }

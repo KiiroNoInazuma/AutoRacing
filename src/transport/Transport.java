@@ -22,14 +22,15 @@ public abstract class Transport implements Competing {
         setEngineCapacity(engineCapacity);
     }
 
-    double getEngineCapacity() {
+    public double getEngineCapacity() {
         return engineCapacity;
     }
 
     void setEngineCapacity(double engineCapacity) {
-        if (engineCapacity <= 0) {
-            engineCapacity = 1.0;
+        if (engineCapacity <= 0.5) {
             System.out.println("Внимание! Малый литраж автомобиля!");
+            engineCapacity = 0.0;
+
         }
         this.engineCapacity = engineCapacity;
     }
@@ -40,12 +41,17 @@ public abstract class Transport implements Competing {
 
     @Override
     public String pitStop() {
-        return model +" "+ brand + " заезжает на техобслуживание";
+        return model + " " + brand + " заезжает на техобслуживание";
     }
 
     @Override
     public void lapTime(double maxSpeed) {
-        System.out.println("Лучшее время " + model + " " + brand + ": " + String.format("%.2f", 10 / maxSpeed * 3600) + "c.");
+        double sp = maxSpeed(maxSpeed);
+        if (maxSpeed == 0) {
+            System.out.println("Лучшее время " + model + " " + brand + ": " + maxSpeed + "c.");
+        } else {
+            System.out.println("Лучшее время " + model + " " + brand + ": " + String.format("%.2f", 10 / sp * 3600) + " c.");
+        }
         System.out.println("Максимальная скорость " + model + " " + brand + ": " + maxSpeed + " km/h");
     }
 

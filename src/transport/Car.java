@@ -5,13 +5,16 @@ public class Car extends Transport {
         super(model, brand, engineCapacity);
     }
 
+
+
     @Override
     public String startDriving() {
-        return getModel() + " " + getBrand() + " начал движение";
+        return getModel() + " " + getBrand() + " начал движение.";
     }
 
     @Override
     public String stopDriving() {
-        return getModel() + " " + getBrand() + " стоит на месте";
+        lapTime(0);
+        return getModel() + " " + getBrand() + " стоит на месте.";
     }
 }

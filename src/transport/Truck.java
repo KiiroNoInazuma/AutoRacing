@@ -12,6 +12,7 @@ public class Truck extends Transport {
 
     @Override
     public String stopDriving() {
+        lapTime(0);
         return getModel() + " " + getBrand() + " стоит на месте";
     }
 }

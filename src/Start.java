@@ -9,7 +9,7 @@ public class Start {
         Car oka = new Car("Лада", "Ока", 0.6);
         DriverB driveFirst = new DriverB("Евгений Романов", "активация", 2013);
         DriverB driveSecond = new DriverB("Роман Насибуллин", "активация", 2009);
-        DriverB driveThird = new DriverB("Дмитрий Тимошенко", "активация", 0);
+        DriverB driveThird = new DriverB("Дмитрий Тимошенко", "активация", 2009);
 
 
         Truck volvo = new Truck("Volvo", "D16", 16.1);
@@ -24,7 +24,11 @@ public class Start {
         DriverD driveSeventh = new DriverD("Дмитрий Тимошенко", "активация", 0);
 
 
+        driveFirst.messageInfoCheck(jaguar);
+        driveSecond.messageInfoCheck(corvette);
+        driveThird.messageInfoCheck(oka);
 
+        driveFirst.setDriverCard("аннулировать");
     }
 }
 

@@ -53,7 +53,7 @@ public class Truck extends Transport {
     }
 
     @Override
-    void printType() {
+    public void printType() {
         System.out.println(getTypeTruck());
     }
 }

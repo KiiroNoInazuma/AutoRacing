@@ -30,7 +30,7 @@ public class Start {
         driveThird.messageInfoCheck(oka);
 
         driveFirst.setDriverCard("аннулировать");
-        jaguar.printType();
+        volvo.printType();
 
 
 

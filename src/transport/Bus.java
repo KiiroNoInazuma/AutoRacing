@@ -54,7 +54,7 @@ public class Bus extends Transport {
     }
 
     @Override
-    void printType() {
+    public void printType() {
         System.out.println(getTypeBus());
     }
 }

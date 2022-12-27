@@ -19,7 +19,7 @@ abstract class Drivers<T extends Transport & Competing> {
         setYearDriverLicense(yearDriverLicense);
     }
 
-    String getFio() {
+    public String getFio() {
         return fio;
     }
 
@@ -27,7 +27,7 @@ abstract class Drivers<T extends Transport & Competing> {
         return driverCard;
     }
 
-    String getInfoDriverCard() {
+    public String getInfoDriverCard() {
         if (isDriverCard()) return "Лицензия ативна.";
         return "Лицензия аннулирована.";
     }
@@ -47,8 +47,8 @@ abstract class Drivers<T extends Transport & Competing> {
     }
 
     public void setYearDriverLicense(int yearDriverLicense) {
-        if (getYearDriverLicense() < 16) {
-            yearDriverLicense = 16;
+        if (getYearDriverLicense() < 5) {
+            yearDriverLicense = 0;
             System.out.println("Водитель должен быть старше 16 лет");
         }
         this.yearDriverLicense = yearDriverLicense;
@@ -56,18 +56,26 @@ abstract class Drivers<T extends Transport & Competing> {
 
 
     public void pitStop(T transport) {
-        System.out.println(fio + " управляя " + transport.pitStop());
+        System.out.println(getFio() + " управляя " + transport.pitStop());
     }
 
     public String startDriving(T transport) {
-        return fio + " - водитель " + transport.startDriving();
+        return getFio() + " - водитель " + transport.startDriving();
     }
 
     public String stopDriving(T transport) {
-        return fio + " - водитель " + transport.startDriving();
+        return getFio() + " - водитель " + transport.startDriving();
     }
 
-
+    public void messageInfoCheck(T transport) {
+        if (getYearDriverLicense() >= 5 && driverCard) {
+            System.out.println("Водитель " + fio + " управляет автомобилем "
+                    + transport.getModel() + " " + transport.getBrand() + " и будет участвовать в заезде!");
+        } else {
+            System.out.println("Водитель " + fio + " не может управлять автомобилем "
+                    + transport.getModel() + " " + transport.getBrand());
+        }
+    }
 }
 
 

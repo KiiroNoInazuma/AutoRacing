@@ -40,7 +40,7 @@ public abstract class Transport implements Competing {
 
     @Override
     public String pitStop() {
-        return model + brand + " заезжает на техобслуживание";
+        return model +" "+ brand + " заезжает на техобслуживание";
     }
 
     @Override

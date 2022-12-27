@@ -4,7 +4,7 @@ import transport.Transport;
 
 import java.time.LocalDate;
 
-abstract class Drivers<T extends Transport & Competing> {
+public abstract class Drivers<T extends Transport & Competing> {
 
     private final String fio;
     private boolean driverCard;

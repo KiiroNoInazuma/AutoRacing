@@ -1,8 +1,45 @@
 package transport;
 
 public class Bus extends Transport {
-    public Bus(String model, String brand, double engineCapacity) {
+    private Bus.BodyTypeBus type;
+    public enum BodyTypeBus {
+        EXTRA_SMALL(null, 10),
+        SMALL(null, 25),
+        MEDIUM(40, 50),
+        LARGE(60, 80),
+        ESPECIALLY_LARGE(100, 200);
+        private final Integer lowerLimit;
+        private final Integer upperLimit;
+
+        BodyTypeBus(Integer lowerLimit, Integer upperLimit) {
+            this.lowerLimit = lowerLimit;
+            this.upperLimit = upperLimit;
+        }
+
+        @Override
+        public String toString() {
+            if (lowerLimit == null) {
+                return "Вместимость: до " + upperLimit + "т.";
+            } else if (upperLimit == null) {
+                return "Вместимость: от " + lowerLimit + "т.";
+            } else {
+                return "Вместимость: от " + lowerLimit + "т." + " до " + upperLimit + "т.";
+            }
+
+        }
+    }
+
+    public Bus(String model, String brand, double engineCapacity, BodyTypeBus type) {
         super(model, brand, engineCapacity);
+        this.type = type;
+    }
+
+    public BodyTypeBus getTypeBus() {
+        return type;
+    }
+
+    public void setTypeTruck(String type) {//доделать
+        this.type = BodyTypeBus.valueOf(type);
     }
 
     @Override

@@ -7,4 +7,3 @@ public class DriverB extends Drivers<Car> {
         super(fio, driverCard, yearDriverLicense);
     }
 }
-

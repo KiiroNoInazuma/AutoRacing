@@ -31,4 +31,3 @@ public class Start {
         driveFirst.setDriverCard("аннулировать");
     }
 }
-

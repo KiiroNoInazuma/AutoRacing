@@ -11,7 +11,7 @@ public class Start {
         DriverB driveSecond = new DriverB("Роман Насибуллин", "активация", 2009);
         DriverB driveThird = new DriverB("Дмитрий Тимошенко", "активация", 2009);
 
-
+/*
         Truck volvo = new Truck("Volvo", "D16", 16.1);
         Truck scania = new Truck("Scania", "R730", 16.4);
         DriverC driveFourth = new DriverC("Роман Насибуллин", "активация", 2009);
@@ -21,7 +21,7 @@ public class Start {
         Bus mercedes = new Bus("Mercedes", "Travego", 11.9);
         Bus yutong = new Bus("Yutong", "U12", 14.5);
         DriverD driverSixth = new DriverD("Женя Романов", "активация", 2013);
-        DriverD driveSeventh = new DriverD("Дмитрий Тимошенко", "активация", 0);
+        DriverD driveSeventh = new DriverD("Дмитрий Тимошенко", "активация", 0);*/
 
 
         driveFirst.messageInfoCheck(jaguar);

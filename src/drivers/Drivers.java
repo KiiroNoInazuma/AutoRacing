@@ -34,16 +34,11 @@ abstract class Drivers<T extends Transport & Competing> {
 
     public void setDriverCard(String driverCard) {
         driverCard = driverCard.toLowerCase();
-        if (driverCard.equals("активация")) {
-            this.driverCard = true;
-        } else {
-            this.driverCard = false;
-        }
+        this.driverCard = driverCard.equals("активация");
     }
 
     public int getYearDriverLicense() {
-        int year = LocalDate.now().getYear() - yearDriverLicense;
-        return year;
+        return LocalDate.now().getYear() - yearDriverLicense;
     }
 
     public void setYearDriverLicense(int yearDriverLicense) {

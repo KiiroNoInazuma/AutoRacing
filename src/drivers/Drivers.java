@@ -1,5 +1,6 @@
 package drivers;
 
+import MyExceptions.TypeOfDriverLicenseException;
 import transport.Car;
 import transport.Transport;
 

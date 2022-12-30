@@ -31,9 +31,9 @@ public class Start {
 
         driveFirst.setDriverCard("аннулировать");
         volvo.printType();
-       // mercedes.getDiagnostics();
-       // mercedes.checkDiagnostics();
-        driveSecond.setDriverCard('C');
+        jaguar.getDiagnostics();
+        jaguar.checkDiagnostics();
+        driveSeventh.setDriverCard('D');
 
 
     }

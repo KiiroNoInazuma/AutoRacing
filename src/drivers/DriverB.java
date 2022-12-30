@@ -1,5 +1,7 @@
 package drivers;
 
+import MyExceptions.TypeOfDriverLicenseException;
+import transport.Bus;
 import transport.Car;
 
 public class DriverB extends Drivers<Car> {
@@ -9,10 +11,14 @@ public class DriverB extends Drivers<Car> {
 
     @Override
     public void setDriverCard(char chr) {
-        if(chr==Car.DRIVER_CARD){
-            System.out.println("Проверка категории прав пройдена.");
-        }else {
-            System.out.println("Данная категория не подходит для управления ТС!");
+        try {
+            if (chr == Car.DRIVER_CARD) {
+                System.out.println("Проверка категории прав пройдена.");
+            } else {
+                throw new TypeOfDriverLicenseException("Ошибка!");
+            }
+        } catch (TypeOfDriverLicenseException e) {
+            System.out.println("Ошибка! Введите верную категорию прав!");
         }
     }
 }

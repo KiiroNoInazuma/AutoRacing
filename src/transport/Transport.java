@@ -6,7 +6,7 @@ public abstract class Transport implements Competing {
     private final String model;
     private final String brand;
     private double engineCapacity;
-    protected static boolean diagnostics;
+    protected boolean diagnostics;
 
     Transport(String model, String brand, double engineCapacity) {
         String def = "default";

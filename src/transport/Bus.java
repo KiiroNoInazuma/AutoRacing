@@ -2,6 +2,7 @@ package transport;
 
 public class Bus extends Transport {
     private Bus.BodyTypeBus type;
+
     public enum BodyTypeBus {
         EXTRA_SMALL(null, 10),
         SMALL(null, 25),
@@ -56,5 +57,11 @@ public class Bus extends Transport {
     @Override
     public void printType() {
         System.out.println(getTypeBus());
+    }
+
+    @Override
+    public void getDiagnostics() throws Exception {
+        throw new Exception("Диагностика для данного вида транспорта недоступна.");
+
     }
 }

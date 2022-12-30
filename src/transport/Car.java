@@ -54,4 +54,9 @@ public class Car extends Transport {
     public void printType() {
         System.out.println(getTypeCar());
     }
+
+    @Override
+    public void getDiagnostics() {
+        diagnostics = true;
+    }
 }

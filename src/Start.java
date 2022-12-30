@@ -4,7 +4,7 @@ import transport.*;
 
 public class Start {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         Car jaguar = new Car("Jaguar", "F-Type", 5.0, Car.BodyTypeCar.COUPE);
         Car corvette = new Car("Chevrolet Corvette", "Stingray", 6.2, Car.BodyTypeCar.SEDAN);
         Car oka = new Car("Лада", "Ока", 0.6, Car.BodyTypeCar.HATCHBACK);
@@ -31,7 +31,8 @@ public class Start {
 
         driveFirst.setDriverCard("аннулировать");
         volvo.printType();
-
+        jaguar.getDiagnostics();
+        Transport.checkDiagnostics(jaguar);
 
 
     }

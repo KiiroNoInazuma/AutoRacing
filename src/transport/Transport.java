@@ -6,6 +6,7 @@ public abstract class Transport implements Competing {
     private final String model;
     private final String brand;
     private double engineCapacity;
+    protected static boolean diagnostics;
 
     Transport(String model, String brand, double engineCapacity) {
         String def = "default";
@@ -69,6 +70,16 @@ public abstract class Transport implements Competing {
     }
 
     abstract void printType();
+
+    abstract void getDiagnostics() throws Exception;
+
+    public static void checkDiagnostics(Transport transports) throws Exception {
+        if (diagnostics) {
+            System.out.println("Автомобиль прошел диагностику");
+        } else {
+            System.out.println("Нужна диагностика автомобиля");
+        }
+    }
 }
 
 

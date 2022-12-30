@@ -73,7 +73,7 @@ public abstract class Transport implements Competing {
 
     abstract void getDiagnostics() throws Exception;
 
-    public static void checkDiagnostics(Transport transports) throws Exception {
+    public void checkDiagnostics(){
         if (diagnostics) {
             System.out.println("Автомобиль прошел диагностику");
         } else {

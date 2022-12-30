@@ -60,8 +60,8 @@ public class Bus extends Transport {
     }
 
     @Override
-    public void getDiagnostics() throws Exception {
-        throw new Exception("Диагностика для данного вида транспорта недоступна.");
+    public void getDiagnostics()  {
+        throw new RuntimeException("Диагностика для данного вида транспорта недоступна.");
 
     }
 }

@@ -31,8 +31,8 @@ public class Start {
 
         driveFirst.setDriverCard("аннулировать");
         volvo.printType();
-        jaguar.getDiagnostics();
-        Transport.checkDiagnostics(jaguar);
+        mercedes.getDiagnostics();
+        mercedes.checkDiagnostics();
 
 
     }

@@ -1,6 +1,7 @@
 package transport;
 
 public class Car extends Transport {
+    public static final char DRIVER_CARD = 'B';
     private BodyTypeCar type;
 
     public enum BodyTypeCar {

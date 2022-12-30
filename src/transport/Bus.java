@@ -2,6 +2,7 @@ package transport;
 
 public class Bus extends Transport {
     private Bus.BodyTypeBus type;
+    public static final char DRIVER_CARD = 'D';
 
     public enum BodyTypeBus {
         EXTRA_SMALL(null, 10),

@@ -1,5 +1,6 @@
 package drivers;
 
+import transport.Car;
 import transport.Transport;
 
 import java.time.LocalDate;
@@ -60,6 +61,10 @@ public abstract class Drivers<T extends Transport & Competing> {
     public String stopDriving(T transport) {
         return getFio() + " - водитель " + transport.stopDriving();
     }
+
+
+
+    abstract void setDriverCard(char chr);
 
     public void messageInfoCheck(T transport) {
         if (getYearDriverLicense() >= 5 && driverCard && yearDriverLicense > 1972 && transport.getEngineCapacity() > 0.5 || isDriverCard()) {

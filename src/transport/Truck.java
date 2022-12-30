@@ -2,6 +2,7 @@ package transport;
 
 public class Truck extends Transport {
     private BodyTypeTruck type;
+    public static final char DRIVER_CARD = 'C';
 
     public enum BodyTypeTruck {
         N1(0.0, 3.5),

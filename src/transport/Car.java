@@ -1,5 +1,7 @@
 package transport;
 
+import drivers.Drivers;
+
 public class Car extends Transport {
     public static final char DRIVER_CARD = 'B';
     private BodyTypeCar type;
@@ -60,4 +62,14 @@ public class Car extends Transport {
     public void getDiagnostics() {
         diagnostics = true;
     }
+
+
+    @SafeVarargs
+    public final void addMechanic(Mechanics<Car>... mechanics) {
+        super.addMechanics(mechanics);
+    }
+    public void setDriver(Drivers<Car> driver) {
+        super.setDrivers(driver);
+    }
+
 }

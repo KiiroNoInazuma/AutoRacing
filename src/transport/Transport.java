@@ -1,12 +1,16 @@
 package transport;
 
 import drivers.Competing;
+import drivers.Drivers;
+
 
 public abstract class Transport implements Competing {
     private final String model;
     private final String brand;
     private double engineCapacity;
     protected boolean diagnostics;
+    private Mechanics<?>[] mechanics;
+    private Drivers<?> driver;
 
     Transport(String model, String brand, double engineCapacity) {
         String def = "default";
@@ -73,13 +77,34 @@ public abstract class Transport implements Competing {
 
     abstract void getDiagnostics() throws Exception;
 
-    public void checkDiagnostics(){
+    public void checkDiagnostics() {
         if (diagnostics) {
             System.out.println("Автомобиль прошел диагностику");
         } else {
             System.out.println("Нужна диагностика автомобиля");
         }
     }
+
+    protected void addMechanics(Mechanics<?>... mechanics) {
+        this.mechanics = mechanics;
+    }
+
+    public void allMechanics() {
+        for (Mechanics<?> mechanic : mechanics) {
+            System.out.println("Автомобиль: " + model + " " + brand);
+            System.out.println(mechanic);
+            System.out.println("----------------------------");
+        }
+    }
+
+   protected void setDrivers(Drivers<?> driver) {
+        this.driver = driver;
+    }
+
+    public void showDriver() {
+        System.out.println("Водитель " + model + " " + brand + ": " + driver.getFio());
+    }
+
 }
 
 

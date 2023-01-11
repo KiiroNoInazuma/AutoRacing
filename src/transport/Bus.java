@@ -1,5 +1,7 @@
 package transport;
 
+import drivers.Drivers;
+
 public class Bus extends Transport {
     private Bus.BodyTypeBus type;
     public static final char DRIVER_CARD = 'D';
@@ -64,5 +66,12 @@ public class Bus extends Transport {
     public void getDiagnostics()  {
         throw new RuntimeException("Диагностика для данного вида транспорта недоступна.");
 
+    }
+    @SafeVarargs
+    public final void addMechanic(Mechanics<Bus>... mechanics) {
+        super.addMechanics(mechanics);
+    }
+    public void setDriver(Drivers<Bus> driver) {
+        super.setDrivers(driver);
     }
 }

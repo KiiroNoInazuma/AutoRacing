@@ -16,7 +16,7 @@ public class Mechanics<T extends Transport> {
 
 
     public void fixCar(T transport, String typeTO) {
-        System.out.println("Проводит " + typeTO + " " + transport.getModel() + " " + transport.getBrand() + ".");
+        System.out.println(name + " проводит " + typeTO + " " + transport.getModel() + " " + transport.getBrand() + ".");
     }
 
 
@@ -34,6 +34,6 @@ public class Mechanics<T extends Transport> {
 
     @Override
     public String toString() {
-        return "Механик "+name + "\nКомпания: " + company + "\nТип обслуживаемого авто: " + typeAuto;
+        return "Механик " + name + "\nКомпания: " + company + "\nТип обслуживаемого авто: " + typeAuto;
     }
 }

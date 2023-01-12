@@ -2,6 +2,8 @@ package transport;
 
 import drivers.Drivers;
 
+import java.util.List;
+
 public class Truck extends Transport {
     private BodyTypeTruck type;
     public static final char DRIVER_CARD = 'C';
@@ -61,13 +63,14 @@ public class Truck extends Transport {
     }
 
     @Override
-   public void getDiagnostics() {
+    public void getDiagnostics() {
         diagnostics = true;
     }
-    @SafeVarargs
-    public final void addMechanic(Mechanics<Truck>... mechanics) {
+
+    public void addMechanicTruck(List<Mechanics<Truck>> mechanics) {
         super.addMechanics(mechanics);
     }
+
     public void setDriver(Drivers<Truck> driver) {
         super.setDrivers(driver);
     }

@@ -2,6 +2,8 @@ package transport;
 
 import drivers.Drivers;
 
+import java.util.List;
+
 public class Car extends Transport {
     public static final char DRIVER_CARD = 'B';
     private BodyTypeCar type;
@@ -64,10 +66,10 @@ public class Car extends Transport {
     }
 
 
-    @SafeVarargs
-    public final void addMechanic(Mechanics<Car>... mechanics) {
+    public void addMechanicCar(List<Mechanics<Car>> mechanics) {
         super.addMechanics(mechanics);
     }
+
     public void setDriver(Drivers<Car> driver) {
         super.setDrivers(driver);
     }

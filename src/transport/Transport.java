@@ -3,13 +3,15 @@ package transport;
 import drivers.Competing;
 import drivers.Drivers;
 
+import java.util.List;
+
 
 public abstract class Transport implements Competing {
     private final String model;
     private final String brand;
     private double engineCapacity;
     protected boolean diagnostics;
-    private Mechanics<?>[] mechanics;
+    private List<?> mechanics;
     private Drivers<?> driver;
 
     Transport(String model, String brand, double engineCapacity) {
@@ -85,19 +87,19 @@ public abstract class Transport implements Competing {
         }
     }
 
-    protected void addMechanics(Mechanics<?>... mechanics) {
+    protected void addMechanics(List<?> mechanics) {
         this.mechanics = mechanics;
     }
 
     public void allMechanics() {
-        for (Mechanics<?> mechanic : mechanics) {
+        for (int i = 0; i < mechanics.size(); i++) {
             System.out.println("Автомобиль: " + model + " " + brand);
-            System.out.println(mechanic);
-            System.out.println("----------------------------");
+            System.out.println(mechanics.get(i));
+            System.out.println("----------------------------------");
         }
     }
 
-   protected void setDrivers(Drivers<?> driver) {
+    protected void setDrivers(Drivers<?> driver) {
         this.driver = driver;
     }
 

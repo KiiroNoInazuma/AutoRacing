@@ -111,7 +111,11 @@ public abstract class Transport implements Competing {
     }
 
     public void showDriver() {
-        System.out.println("Водитель " + model + " " + brand + ": " + driver.getFio());
+        try {
+            System.out.println("Водитель " + model + " " + brand + ": " + driver.getFio());
+        } catch (NullPointerException e) {
+            System.out.println("Водители не добавлены!");
+        }
     }
 
 }

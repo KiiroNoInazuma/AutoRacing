@@ -31,7 +31,7 @@ public class Mechanics<T extends Transport> {
         }
     }
 
-    public void setTypeAuto(String typeAuto) {
+    private void setTypeAuto(String typeAuto) {
         if(typeAuto.equals("Легковые")||typeAuto.equals("Грузовые")||typeAuto.equals("Автобусы")) {
             this.typeAuto = typeAuto;
         }else {

@@ -40,7 +40,7 @@ public class Start extends Add {
         carAuto.get(0).addMechanicCar(carMechanics);
         carAuto.get(1).setDriver(carDrivers.get(0));
         allAuto.get(0).allMechanics();
-        carMechanics.get(0).fixCar(carAuto.get(0), "техобслуживание");
+        carMechanics.get(0).fixCar(carAuto.get(0), Mechanics.Service.REPAIR);
 
 
     }

@@ -3,6 +3,14 @@ package transport;
 
 public class Mechanics<T extends Transport> {
 
+    public enum Service {
+        SERVICE("Сервис"), REPAIR("Ремонт");
+        private final String nm;
+
+        Service(String nm) {
+            this.nm = nm;
+        }
+    }
 
     private final String name;
     private final String company;
@@ -11,25 +19,24 @@ public class Mechanics<T extends Transport> {
     public Mechanics(String name, String company, String workAuto) {
         this.name = name;
         this.company = company;
-        this.typeAuto = workAuto;
+        setTypeAuto(workAuto);
     }
 
 
-    public void fixCar(T transport, String typeTO) {
-        System.out.println(name + " проводит " + typeTO + " " + transport.getModel() + " " + transport.getBrand() + ".");
+    public void fixCar(T transport, Service service) {
+        if (transport.check) {
+            System.out.println(name + " проводит " + service.nm + " " + transport.getModel() + " " + transport.getBrand() + ".");
+        } else {
+            throw new RuntimeException("Вы не добавили механиков! Обслуживание невозможно!");
+        }
     }
 
-
-    public String getName() {
-        return name;
-    }
-
-    public String getCompany() {
-        return company;
-    }
-
-    public String getTypeAuto() {
-        return typeAuto;
+    public void setTypeAuto(String typeAuto) {
+        if(typeAuto.equals("Легковые")||typeAuto.equals("Грузовые")||typeAuto.equals("Автобусы")) {
+            this.typeAuto = typeAuto;
+        }else {
+            throw new RuntimeException("Введите правильный тип транспорта!");
+        }
     }
 
     @Override

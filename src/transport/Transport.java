@@ -13,6 +13,7 @@ public abstract class Transport implements Competing {
     protected boolean diagnostics;
     private List<?> mechanics;
     private Drivers<?> driver;
+    protected boolean check;
 
     Transport(String model, String brand, double engineCapacity) {
         String def = "default";
@@ -92,12 +93,18 @@ public abstract class Transport implements Competing {
     }
 
     public void allMechanics() {
-        for (int i = 0; i < mechanics.size(); i++) {
-            System.out.println("Автомобиль: " + model + " " + brand);
-            System.out.println(mechanics.get(i));
-            System.out.println("----------------------------------");
+        try {
+            for (int i = 0; i < mechanics.size(); i++) {
+                System.out.println("Автомобиль: " + model + " " + brand);
+                System.out.println(mechanics.get(i));
+                System.out.println("----------------------------------");
+                check = true;
+            }
+        } catch (NullPointerException e) {
+            System.out.println("Не добавлены механики!");
         }
     }
+
 
     protected void setDrivers(Drivers<?> driver) {
         this.driver = driver;
